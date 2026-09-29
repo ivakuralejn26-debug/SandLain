@@ -1,0 +1,105 @@
+###автозагрузка###
+exec --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle
+exec --no-startup-id feh --bg-scale /home/lain/media/paper/grey.jpg
+exec --no-startup-id xcompmgr -f -I 0.03 -O 0.03 -D 4 -c -C -o 0.45 -r 15 -l -12 -t -12
+
+###шрифты###
+font pango: IBM Plex Mono 10
+
+set $up l
+set $down k
+set $left j
+set $right semicolon
+
+###Бинды###
+bindsym Mod1+q kill
+bindsym Mod1+s layout stacking
+bindsym Mod1+w layout tabbed
+bindsym Mod1+e layout toggle split
+bindsym Mod1+Shift+r restart
+bindsym Mod1+Shift+space floating toggle
+bindsym Mod1+space focus mode_toggle
+bindsym Mod1+a focus parent
+bindsym Mod1+Shift+minus move scratchpad
+bindsym Mod1+$left focus left
+bindsym Mod1+$down focus down
+bindsym Mod1+$up focus up
+bindsym Mod1+$right focus right
+bindsym Mod1+Left focus left
+bindsym Mod1+Down focus down
+bindsym Mod1+Up focus up
+bindsym Mod1+Right focus right
+bindsym Mod1+Shift+$left move left
+bindsym Mod1+Shift+$down move down
+bindsym Mod1+Shift+$up move up
+bindsym Mod1+Shift+$right move right
+bindsym Mod1+Shift+Left move left
+bindsym Mod1+Shift+Down move down
+bindsym Mod1+Shift+Up move up
+bindsym Mod1+Shift+Right move right
+bindsym Mod1+h split h
+bindsym Mod1+v split v
+bindsym Mod1+f fullscreen toggle
+
+#Бинды на приложения#
+bindsym Mod1+t exec --no-startup-id st
+bindsym Mod1+d exec --no-startup-id dmenu_run
+bindsym Mod1+c exec --no-startup-id nemo
+bindsym Print exec --no-startup-id flameshot gui
+floating_modifier Mod1
+tiling_drag modifier titlebar
+
+#окон и рамочек
+default_border pixel 3
+default_floating_border pixel 2
+
+#Окошки.<class>         <border>  <background>  <text>    <indicator> <child_border>
+client.focused          #D9CAAD   #D9CAAD       #D9CAAD   #D9CAAD     #D9CAAD
+client.focused_inactive #857e4f   #857e4f       #857e4f   #857e4f     #857e4f
+client.unfocused        #8C8070   #8C8070       #9c9494   #353421     #353421
+client.urgent           #D9CAAD   #627135       #c7bd94   #627135     #627135
+client.placeholder      #353421   #353421       #c7bd94   #353421     #353421
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+bar {
+    status_command i3status
+    position top
+    mode dock
+    separator_symbol " "
+    font pango:IBM Plex Mono 10
+
+    colors {
+        background #262626
+        statusline #8C8070
+        separator  #262626
+
+        # class             border  bg      text
+        focused_workspace   #262626 #262626 #D9CAAD
+        active_workspace    #262626 #262626 #D9CAAD
+        inactive_workspace  #262626 #262626 #8C8070
+        urgent_workspace    #262626 #262626 #8C8070
+    }
+}
+
