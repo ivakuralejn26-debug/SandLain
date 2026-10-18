@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Sandstone
+Name[ru]=Sandstone
+Comment=Sand colored GTK3/GTK4 theme
+Comment[ru]=Песочная тема для GTK3/GTK4
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Sandstone
+MetacityTheme=Sandstone

@@ -1,0 +1,542 @@
+/* Sandstone - dark theme (GTK3) */
+/* Palette: #D9CAAD #BFAE99 #8C8070 #262626 */
+
+@define-color window_bg_color #262626;
+@define-color window_fg_color #D9CAAD;
+@define-color view_bg_color #2C2C2A;
+@define-color view_fg_color #D9CAAD;
+@define-color accent_bg_color #8C8070;
+@define-color accent_fg_color #D9CAAD;
+@define-color headerbar_bg_color #2E2C28;
+@define-color headerbar_fg_color #D9CAAD;
+@define-color border_color #4A443A;
+@define-color border_strong_color #8C8070;
+@define-color hover_bg_color #3F3C38;
+@define-color active_bg_color #6D655A;
+@define-color accent_hover_color #6D655A;
+@define-color dim_color #BFAE99;
+@define-color disabled_bg_color #33302C;
+@define-color link_color #BFAE99;
+
+* {
+    color: @window_fg_color;
+    border-color: @border_color;
+}
+
+window, .background {
+    background-color: @window_bg_color;
+    color: @window_fg_color;
+}
+
+window:backdrop, .background:backdrop {
+    background-color: @window_bg_color;
+}
+
+/* ----- headerbar / titlebar ----- */
+
+headerbar, .titlebar, menubar {
+    background-color: @headerbar_bg_color;
+    color: @headerbar_fg_color;
+    border-bottom: 1px solid @border_color;
+}
+
+windowcontrols button, headerbar button.titlebutton {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: @headerbar_fg_color;
+}
+
+windowcontrols button:hover, headerbar button.titlebutton:hover {
+    background-color: @hover_bg_color;
+    border-color: @border_color;
+}
+
+windowcontrols button:active, headerbar button.titlebutton:active {
+    background-color: @active_bg_color;
+}
+
+/* ----- buttons ----- */
+
+button {
+    background-color: @window_bg_color;
+    border: 1px solid @border_color;
+    border-radius: 5px;
+    color: @window_fg_color;
+    padding: 3px 8px;
+}
+
+button:hover {
+    background-color: @hover_bg_color;
+    border-color: @border_strong_color;
+}
+
+button:active {
+    background-color: @active_bg_color;
+    color: @window_fg_color;
+}
+
+button:checked, button:checked:hover {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+    border-color: @accent_bg_color;
+}
+
+button:disabled, button:disabled:active, button:disabled:checked {
+    background-color: @disabled_bg_color;
+    color: @dim_color;
+    border-color: @border_color;
+}
+
+button:disabled label {
+    color: @dim_color;
+}
+
+button.flat {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+button.flat:hover {
+    background-color: @hover_bg_color;
+}
+
+button.flat:checked {
+    background-color: @active_bg_color;
+    color: @window_fg_color;
+}
+
+button.default {
+    border-color: @accent_bg_color;
+}
+
+button.suggested-action {
+    background-color: @window_bg_color;
+    border-color: @accent_bg_color;
+}
+
+button.destructive-action {
+    background-color: @window_bg_color;
+    border-color: @border_strong_color;
+}
+
+/* ----- entry / spinbutton ----- */
+
+entry, spinbutton {
+    background-color: @view_bg_color;
+    border: 1px solid @border_color;
+    border-radius: 5px;
+    color: @view_fg_color;
+    padding: 3px 6px;
+}
+
+entry:focus, spinbutton:focus,
+spinbutton.prompt > entry:focus {
+    border-color: @accent_bg_color;
+}
+
+entry:disabled, spinbutton:disabled {
+    background-color: @disabled_bg_color;
+    color: @dim_color;
+}
+
+entry selection, selection {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+}
+
+spinbutton button {
+    border: 0;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 2px 6px;
+}
+
+spinbutton button:hover {
+    background-color: @hover_bg_color;
+}
+
+/* ----- treeview / list / rows ----- */
+
+treeview, list, .view {
+    background-color: @view_bg_color;
+    color: @view_fg_color;
+}
+
+treeview:selected, treeview row:selected,
+list row:selected, row:selected, .view:selected {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+}
+
+treeview row:hover, list row:hover, row:hover {
+    background-color: @hover_bg_color;
+    color: @view_fg_color;
+}
+
+row.activatable:selected:hover {
+    background-color: @accent_hover_color;
+    color: @accent_fg_color;
+}
+
+treeview header button {
+    background-color: @window_bg_color;
+    border: 1px solid @border_color;
+    color: @window_fg_color;
+}
+
+treeview header button:hover {
+    background-color: @hover_bg_color;
+}
+
+treeview header button:active {
+    background-color: @active_bg_color;
+}
+
+/* ----- menus ----- */
+
+menu, .menu {
+    background-color: @window_bg_color;
+    border: 1px solid @border_color;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+menu menuitem, .menu menuitem {
+    background-color: transparent;
+    color: @window_fg_color;
+    padding: 4px 8px;
+}
+
+menu menuitem:hover, .menu menuitem:hover {
+    background-color: @hover_bg_color;
+}
+
+menu menuitem:disabled, .menu menuitem:disabled,
+menubar menuitem:disabled {
+    color: @dim_color;
+}
+
+menu separator, .menu separator,
+menubar separator,
+GtkMenu separator {
+    background-color: @border_color;
+    color: @border_color;
+}
+
+menubar > item {
+    padding: 4px 8px;
+}
+
+menubar > item:hover, menubar menuitem:hover {
+    background-color: @hover_bg_color;
+}
+
+popover, popover.background {
+    background-color: @window_bg_color;
+    border: 1px solid @border_color;
+    border-radius: 5px;
+    color: @window_fg_color;
+}
+
+popover.background > arrow, popover > arrow {
+    background-color: @window_bg_color;
+}
+
+popover.background > contents, popover > contents {
+    background-color: transparent;
+    color: @window_fg_color;
+}
+
+popover modelbutton {
+    background-color: transparent;
+    color: @window_fg_color;
+    padding: 4px 8px;
+}
+
+popover modelbutton:hover {
+    background-color: @hover_bg_color;
+}
+
+/* ----- scrollbar ----- */
+
+scrollbar {
+    background-color: transparent;
+}
+
+scrollbar slider {
+    background-color: @border_color;
+    border: 1px solid @accent_bg_color;
+    border-radius: 6px;
+    min-width: 9px;
+    min-height: 9px;
+}
+
+scrollbar slider:hover {
+    background-color: @accent_bg_color;
+}
+
+scrollbar slider:active {
+    background-color: @accent_hover_color;
+}
+
+scrollbar trough {
+    background-color: @hover_bg_color;
+    border-radius: 6px;
+}
+
+scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
+    background-color: @border_color;
+}
+
+scrollbar.junction {
+    background-color: @window_bg_color;
+}
+
+/* ----- switch / check / radio ----- */
+
+switch {
+    background-color: @border_color;
+    border: 1px solid @accent_bg_color;
+    border-radius: 7px;
+    color: @window_fg_color;
+}
+
+switch:checked {
+    background-color: @accent_bg_color;
+    border-color: @accent_bg_color;
+}
+
+switch slider {
+    background-color: @view_bg_color;
+    border: 1px solid @accent_bg_color;
+    border-radius: 50%;
+    min-width: 18px;
+    min-height: 18px;
+}
+
+switch:checked slider {
+    background-color: @accent_fg_color;
+}
+
+check, radio {
+    background-color: @view_bg_color;
+    border: 1px solid @accent_bg_color;
+    border-radius: 3px;
+    min-width: 14px;
+    min-height: 14px;
+    color: @accent_fg_color;
+}
+
+radio {
+    border-radius: 50%;
+}
+
+check:hover, radio:hover {
+    background-color: @hover_bg_color;
+}
+
+check:checked, radio:checked,
+check:indeterminate, radio:indeterminate {
+    background-color: @accent_bg_color;
+    border-color: @accent_bg_color;
+    color: @accent_fg_color;
+}
+
+check:checked:hover, radio:checked:hover,
+check:indeterminate:hover, radio:indeterminate:hover {
+    background-color: @accent_hover_color;
+}
+
+check:disabled, radio:disabled {
+    background-color: @disabled_bg_color;
+    border-color: @border_color;
+    color: @dim_color;
+}
+
+checkbutton, radiobutton {
+    color: @window_fg_color;
+}
+
+/* ----- scale / progressbar ----- */
+
+scale trough {
+    background-color: @border_color;
+    border: 1px solid @accent_bg_color;
+    border-radius: 4px;
+}
+
+scale highlight {
+    background-color: @accent_bg_color;
+    border-radius: 4px;
+}
+
+scale slider {
+    background-color: @view_bg_color;
+    border: 1px solid @accent_bg_color;
+    border-radius: 50%;
+    min-width: 14px;
+    min-height: 14px;
+}
+
+scale slider:hover {
+    background-color: @accent_fg_color;
+}
+
+scale slider:active {
+    background-color: @hover_bg_color;
+}
+
+progressbar trough {
+    background-color: @border_color;
+    border: 1px solid @accent_bg_color;
+    border-radius: 4px;
+}
+
+progressbar progress {
+    background-color: @accent_bg_color;
+    border-radius: 4px;
+}
+
+progressbar.vertical progress {
+    background-color: @accent_bg_color;
+}
+
+/* ----- notebook / tabs ----- */
+
+notebook {
+    background-color: @window_bg_color;
+    border: 1px solid @border_color;
+}
+
+notebook > header {
+    background-color: @window_bg_color;
+    border: 0;
+}
+
+notebook > header tab {
+    background-color: @window_bg_color;
+    border: 1px solid @border_color;
+    padding: 4px 10px;
+    color: @window_fg_color;
+}
+
+notebook > header tab:checked {
+    background-color: @view_bg_color;
+    color: @view_fg_color;
+}
+
+notebook > header tab:hover {
+    background-color: @hover_bg_color;
+}
+
+notebook > header.top > tabs > tab:checked {
+    border-bottom-color: @view_bg_color;
+}
+
+notebook > header.bottom > tabs > tab:checked {
+    border-top-color: @view_bg_color;
+}
+
+notebook > header.left > tabs > tab:checked {
+    border-right-color: @view_bg_color;
+}
+
+notebook > header.right > tabs > tab:checked {
+    border-left-color: @view_bg_color;
+}
+
+notebook > header > tabs > arrow {
+    color: @window_fg_color;
+    background-color: transparent;
+}
+
+/* ----- frames / separators / misc ----- */
+
+frame border, .frame {
+    border: 1px solid @border_color;
+}
+
+frame > border {
+    border: 1px solid @border_color;
+}
+
+separator, .separator {
+    background-color: @border_color;
+    color: @border_color;
+}
+
+toolbar {
+    background-color: @window_bg_color;
+    border: 0;
+}
+
+infobar {
+    background-color: @border_color;
+    border: 1px solid @accent_bg_color;
+}
+
+infobar label, infobar > box > label {
+    color: @window_fg_color;
+}
+
+statusbar {
+    color: @dim_color;
+}
+
+tooltip, .tooltip {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+    border: 1px solid @border_color;
+    border-radius: 5px;
+}
+
+tooltip label, .tooltip label {
+    color: @accent_fg_color;
+}
+
+placessidebar, .sidebar {
+    background-color: @window_bg_color;
+    color: @window_fg_color;
+}
+
+placessidebar row:selected, .sidebar row:selected {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+}
+
+.dim-label, label.dim-label {
+    color: @dim_color;
+}
+
+link, label link {
+    color: @link_color;
+    text-decoration: underline;
+}
+
+view, textview text {
+    background-color: @view_bg_color;
+    color: @view_fg_color;
+}
+
+textview text:selected, view:selected {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+}
+
+combobox arrow {
+    color: @window_fg_color;
+}
+
+combobox button {
+    background-color: @view_bg_color;
+}
+
+paned > separator {
+    background-color: @border_color;
+    background-image: none;
+}
+
+:selected {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+}
