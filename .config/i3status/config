@@ -1,0 +1,22 @@
+general {
+    colors = true
+    color_good = "#00FF00"
+    color_degraded = "#FFFF00"
+    color_bad = "#FF0000"
+    interval = 2
+}
+
+
+order += "memory"
+order += "tztime local"
+
+memory {
+    format = "%used"
+    threshold_degraded = "10%"
+    format_degraded = "MEMORY: %free"
+}
+
+
+tztime local {
+    format = "%Y-%m-%d %H:%M:%S"
+}
